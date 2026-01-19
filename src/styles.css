@@ -1,0 +1,271 @@
+:root {
+  color-scheme: light dark;
+  font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f6f7fb;
+  color: #1d1f24;
+}
+
+.app {
+  min-height: 100vh;
+  padding: 32px 20px 48px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.app--dark {
+  background: #111216;
+  color: #f6f7fb;
+}
+
+.app__header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.app__eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 4px;
+  opacity: 0.7;
+}
+
+.app__title {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.app__subtitle {
+  margin: 4px 0 0;
+  opacity: 0.7;
+}
+
+.calculator {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 20px 50px rgba(13, 15, 20, 0.08);
+  max-width: 320px;
+  width: 100%;
+  justify-self: center;
+}
+
+.app--dark .card {
+  background: #1c1e24;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.card__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.form-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.field {
+  display: grid;
+  gap: 8px;
+}
+
+.field span {
+  font-weight: 600;
+}
+
+.field__inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 500;
+}
+
+input,
+select {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #d7dbe6;
+  background: #ffffff;
+  color: inherit;
+}
+
+.app--dark input,
+.app--dark select {
+  background: #111216;
+  border-color: #2f3342;
+}
+
+.button {
+  padding: 10px 14px;
+  border-radius: 12px;
+  border: 1px solid #d7dbe6;
+  background: transparent;
+  color: inherit;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.1s ease, border 0.1s ease, background 0.1s ease;
+}
+
+.button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  border-color: #9ea6bc;
+}
+
+.button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.button--active,
+.button--primary {
+  background: #3b6cf4;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+.button--ghost {
+  border-color: transparent;
+  background: rgba(59, 108, 244, 0.08);
+}
+
+.button-group {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.results__hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.results__label {
+  margin: 0;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+.results__value {
+  margin: 4px 0 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.results__rounding {
+  margin: 0 0 16px;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+.results__list {
+  display: grid;
+  gap: 12px;
+}
+
+.person-row {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(59, 108, 244, 0.08);
+}
+
+.app--dark .person-row {
+  background: rgba(59, 108, 244, 0.16);
+}
+
+.person-row__name {
+  width: 100%;
+}
+
+.person-row__amount {
+  font-weight: 700;
+  font-size: 1.1rem;
+  justify-self: end;
+}
+
+.person-row__actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.person-row__adjustment {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 640px) {
+  .app {
+    padding: 20px 16px 32px;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .calculator {
+    grid-template-columns: 1fr;
+    justify-items: stretch;
+  }
+
+  .card {
+    max-width: 100%;
+  }
+
+  .card__header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .button-group {
+    width: 100%;
+  }
+
+  .button-group .button {
+    flex: 1 1 100%;
+    width: 100%;
+  }
+
+  .person-row {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .person-row__amount {
+    justify-self: start;
+  }
+
+  .results__value {
+    font-size: 1.35rem;
+  }
+}

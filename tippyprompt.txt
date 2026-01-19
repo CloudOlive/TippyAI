@@ -1,0 +1,34 @@
+Create a single-page tip calculator app for small groups (2-10 people). The app should be clean, mobile-friendly, and easy to use in a restaurant setting.
+Core Features in an adaptive card:
+
+Bill input - Large, clear number input for total bill amount
+Tip percentage selector - Preset buttons for 15%, 18%, 20%, 25%, plus a custom percentage input field
+Number of people - Dropdown or number input for 2-10 people
+Tax handling - Checkbox option: "Calculate tip on pre-tax amount?" with a field to enter the tax amount if checked
+Results display - Show in large, prominent text:
+
+Tip amount
+Total bill (bill + tip)
+Amount each person pays
+
+
+
+Additional Features:
+6. Named splits - Option to add names/initials for each person, displaying "Alex: $23.50, Sam: $23.50" etc.
+7. Rounding options - Buttons to round each person's amount to nearest $1 or $5
+8. Quick adjustments - +/- $1 buttons next to amounts for small tweaks
+9. Unequal split - Simple toggle for scenarios like "1 person didn't have drinks" with an amount adjustment
+10. Share functionality - Button to copy or share the breakdown via text/messaging
+Design Requirements:
+
+Clean, modern interface with good contrast for dim restaurant lighting
+Large touch targets for easy mobile use
+Responsive design that works on phones and tablets
+Clear visual hierarchy with the final "per person" amount most prominent
+Quick reset/new calculation button
+
+Nice-to-Have:
+
+Include a Dark mode option
+"Cash tip helper" mode showing breakdown if one person covers tip in cash
+Build this as a React component with a polished, professional look. 
