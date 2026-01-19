@@ -1,6 +1,7 @@
 :root {
   color-scheme: light dark;
   font-family: "Inter", "Segoe UI", system-ui, sans-serif;
+  font-size: 14px;
 }
 
 * {
@@ -11,6 +12,7 @@ body {
   margin: 0;
   background: #f6f7fb;
   color: #1d1f24;
+  font-size: 0.95rem;
 }
 
 .app {
@@ -36,7 +38,7 @@ body {
 .app__eyebrow {
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  font-size: 1rem;
+  font-size: 0.9rem;
   font-weight: 700;
   margin: 0 0 4px;
   opacity: 0.7;
@@ -44,7 +46,7 @@ body {
 
 .app__title {
   margin: 0;
-  font-size: 2rem;
+  font-size: 1.7rem;
 }
 
 .app__subtitle {
@@ -106,7 +108,7 @@ body {
 input,
 select {
   padding: 12px 14px;
-  font-size: 1rem;
+  font-size: 0.95rem;
   border-radius: 12px;
   border: 1px solid #d7dbe6;
   background: #ffffff;
@@ -126,6 +128,7 @@ select {
   background: transparent;
   color: inherit;
   font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
   transition: transform 0.1s ease, border 0.1s ease, background 0.1s ease;
 }
@@ -173,7 +176,7 @@ select {
 
 .results__value {
   margin: 4px 0 0;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
 }
 
@@ -207,7 +210,7 @@ select {
 
 .person-row__amount {
   font-weight: 700;
-  font-size: 1.1rem;
+  font-size: 1rem;
   justify-self: end;
 }
 
@@ -266,6 +269,6 @@ select {
   }
 
   .results__value {
-    font-size: 1.35rem;
+    font-size: 1.2rem;
   }
 }
