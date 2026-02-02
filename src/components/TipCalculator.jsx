@@ -32,6 +32,7 @@ export default function TipCalculator() {
   const [unequalSplitEnabled, setUnequalSplitEnabled] = useState(false);
   const [cashTipMode, setCashTipMode] = useState(false);
   const [cashTipPayerIndex, setCashTipPayerIndex] = useState(0);
+  const [step, setStep] = useState("controls");
 
   useEffect(() => {
     setNames((prev) => {
@@ -130,6 +131,9 @@ export default function TipCalculator() {
     cashTipMode,
   ]);
 
+  const handleCalculate = () => setStep("results");
+  const handleBack = () => setStep("controls");
+
   const handleReset = () => {
     setBillAmount(DEFAULT_BILL);
     setTipPercent(DEFAULT_TIP);
@@ -146,59 +150,70 @@ export default function TipCalculator() {
     setUnequalSplitEnabled(false);
     setCashTipMode(false);
     setCashTipPayerIndex(0);
+    setStep("controls");
   };
 
   return (
     <div className="calculator">
-      <ControlsPanel
-        billAmount={billAmount}
-        onBillAmountChange={setBillAmount}
-        tipPercent={tipPercent}
-        onTipPercentChange={setTipPercent}
-        useCustomTip={useCustomTip}
-        onUseCustomTipChange={setUseCustomTip}
-        customTip={customTip}
-        onCustomTipChange={setCustomTip}
-        peopleCount={peopleCount}
-        onPeopleCountChange={(value) => {
-          const safeValue = Math.min(10, Math.max(2, value || DEFAULT_PEOPLE));
-          setPeopleCount(safeValue);
-        }}
-        includePreTax={includePreTax}
-        onIncludePreTaxChange={setIncludePreTax}
-        taxAmount={taxAmount}
-        onTaxAmountChange={setTaxAmount}
-        roundingMode={roundingMode}
-        onRoundingModeChange={setRoundingMode}
-        unequalSplitEnabled={unequalSplitEnabled}
-        onUnequalSplitEnabledChange={(enabled) => {
-          setUnequalSplitEnabled(enabled);
-          if (!enabled) {
-            setAdjustments((prev) => prev.map(() => 0));
-          }
-        }}
-        cashTipMode={cashTipMode}
-        onCashTipModeChange={setCashTipMode}
-        cashTipPayerIndex={cashTipPayerIndex}
-        onCashTipPayerIndexChange={setCashTipPayerIndex}
-        names={names}
-        onReset={handleReset}
-      />
-      <ResultsPanel
-        tipAmount={tipData.tipAmount}
-        totalAmount={totalAmount}
-        averagePerPerson={averagePerPerson}
-        roundingDelta={roundingDelta}
-        roundingMode={roundingMode}
-        peopleCount={peopleCount}
-        names={names}
-        setNames={setNames}
-        roundedAmounts={roundedAmounts}
-        adjustments={adjustments}
-        setAdjustments={setAdjustments}
-        unequalSplitEnabled={unequalSplitEnabled}
-        shareText={shareText}
-      />
+      <div className="step-flow">
+        <div className={`step-flow__track step-flow__track--${step}`}>
+          <div className="step-flow__panel">
+            <ControlsPanel
+              billAmount={billAmount}
+              onBillAmountChange={setBillAmount}
+              tipPercent={tipPercent}
+              onTipPercentChange={setTipPercent}
+              useCustomTip={useCustomTip}
+              onUseCustomTipChange={setUseCustomTip}
+              customTip={customTip}
+              onCustomTipChange={setCustomTip}
+              peopleCount={peopleCount}
+              onPeopleCountChange={(value) => {
+                const safeValue = Math.min(10, Math.max(2, value || DEFAULT_PEOPLE));
+                setPeopleCount(safeValue);
+              }}
+              includePreTax={includePreTax}
+              onIncludePreTaxChange={setIncludePreTax}
+              taxAmount={taxAmount}
+              onTaxAmountChange={setTaxAmount}
+              roundingMode={roundingMode}
+              onRoundingModeChange={setRoundingMode}
+              unequalSplitEnabled={unequalSplitEnabled}
+              onUnequalSplitEnabledChange={(enabled) => {
+                setUnequalSplitEnabled(enabled);
+                if (!enabled) {
+                  setAdjustments((prev) => prev.map(() => 0));
+                }
+              }}
+              cashTipMode={cashTipMode}
+              onCashTipModeChange={setCashTipMode}
+              cashTipPayerIndex={cashTipPayerIndex}
+              onCashTipPayerIndexChange={setCashTipPayerIndex}
+              names={names}
+              onReset={handleReset}
+              onCalculate={handleCalculate}
+            />
+          </div>
+          <div className="step-flow__panel">
+            <ResultsPanel
+              tipAmount={tipData.tipAmount}
+              totalAmount={totalAmount}
+              averagePerPerson={averagePerPerson}
+              roundingDelta={roundingDelta}
+              roundingMode={roundingMode}
+              peopleCount={peopleCount}
+              names={names}
+              setNames={setNames}
+              roundedAmounts={roundedAmounts}
+              adjustments={adjustments}
+              setAdjustments={setAdjustments}
+              unequalSplitEnabled={unequalSplitEnabled}
+              shareText={shareText}
+              onBack={handleBack}
+            />
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

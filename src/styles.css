@@ -55,9 +55,7 @@ body {
 }
 
 .calculator {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 320px));
-  gap: 20px;
+  display: flex;
   justify-content: center;
 }
 
@@ -74,6 +72,73 @@ body {
 .app--dark .card {
   background: #1c1e24;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.step-flow {
+  width: 100%;
+  max-width: 320px;
+  overflow: hidden;
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 20px 50px rgba(13, 15, 20, 0.08);
+}
+
+.app--dark .step-flow {
+  background: #1c1e24;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.45);
+}
+
+.step-flow__track {
+  display: flex;
+  width: 200%;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.step-flow__track--controls {
+  transform: translateX(0);
+}
+
+.step-flow__track--results {
+  transform: translateX(-50%);
+}
+
+.step-flow__panel {
+  width: 50%;
+  flex-shrink: 0;
+}
+
+.step-flow__panel .card {
+  max-width: none;
+  width: 100%;
+  box-shadow: none;
+  border-radius: 0;
+  background: transparent;
+}
+
+.card__header-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.button--back {
+  padding: 6px 10px;
+  font-size: 1.1rem;
+  line-height: 1;
+  border-radius: 8px;
+}
+
+.button--calculate {
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px;
+  font-size: 1rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step-flow__track {
+    transition: none;
+  }
 }
 
 .card__header {
@@ -236,13 +301,9 @@ select {
     padding: 16px;
   }
 
-  .calculator {
-    grid-template-columns: 1fr;
-    justify-items: stretch;
-  }
-
-  .card {
+  .step-flow {
     max-width: 100%;
+    border-radius: 12px;
   }
 
   .card__header {

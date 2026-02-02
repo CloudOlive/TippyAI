@@ -29,6 +29,7 @@ export default function ControlsPanel({
   onCashTipPayerIndexChange,
   names,
   onReset,
+  onCalculate,
 }) {
   return (
     <section className="card card--inputs">
@@ -172,6 +173,14 @@ export default function ControlsPanel({
             </label>
           )}
         </div>
+
+        <button
+          className="button button--primary button--calculate"
+          type="button"
+          onClick={onCalculate}
+        >
+          Calculate
+        </button>
       </div>
     </section>
   );

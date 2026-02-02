@@ -16,6 +16,7 @@ export default function ResultsPanel({
   setAdjustments,
   unequalSplitEnabled,
   shareText,
+  onBack,
 }) {
   const roundedDeltaText = useMemo(() => {
     if (roundingMode === "none") {
@@ -37,7 +38,17 @@ export default function ResultsPanel({
   return (
     <section className="card card--results">
       <div className="card__header">
-        <h2>Results</h2>
+        <div className="card__header-left">
+          <button
+            className="button button--ghost button--back"
+            type="button"
+            onClick={onBack}
+            aria-label="Back to bill details"
+          >
+            &#8592;
+          </button>
+          <h2>Results</h2>
+        </div>
         <button className="button button--primary" type="button" onClick={handleShare}>
           Share breakdown
         </button>
