@@ -62,7 +62,7 @@ body {
 .card {
   background: #ffffff;
   border-radius: 16px;
-  padding: 18px;
+  padding: 14px;
   box-shadow: 0 20px 50px rgba(13, 15, 20, 0.08);
   max-width: 320px;
   width: 100%;
@@ -130,9 +130,9 @@ body {
 
 .button--calculate {
   width: 100%;
-  margin-top: 8px;
-  padding: 14px;
-  font-size: 1rem;
+  margin-top: 6px;
+  padding: 10px;
+  font-size: 0.95rem;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -145,18 +145,18 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 16px;
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .form-grid {
   display: grid;
-  gap: 16px;
+  gap: 10px;
 }
 
 .field {
   display: grid;
-  gap: 8px;
+  gap: 5px;
 }
 
 .field span {
@@ -172,9 +172,9 @@ body {
 
 input,
 select {
-  padding: 12px 14px;
-  font-size: 0.95rem;
-  border-radius: 12px;
+  padding: 8px 10px;
+  font-size: 0.9rem;
+  border-radius: 10px;
   border: 1px solid #d7dbe6;
   background: #ffffff;
   color: inherit;
@@ -187,8 +187,8 @@ select {
 }
 
 .button {
-  padding: 10px 14px;
-  border-radius: 12px;
+  padding: 7px 12px;
+  border-radius: 10px;
   border: 1px solid #d7dbe6;
   background: transparent;
   color: inherit;
@@ -222,15 +222,15 @@ select {
 
 .button-group {
   display: flex;
-  gap: 8px;
+  gap: 6px;
   flex-wrap: wrap;
 }
 
 .results__hero {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 12px;
-  margin-bottom: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 8px;
+  margin-bottom: 10px;
 }
 
 .results__label {
@@ -240,28 +240,28 @@ select {
 }
 
 .results__value {
-  margin: 4px 0 0;
-  font-size: 1.3rem;
+  margin: 2px 0 0;
+  font-size: 1.15rem;
   font-weight: 700;
 }
 
 .results__rounding {
-  margin: 0 0 16px;
-  font-size: 0.9rem;
+  margin: 0 0 10px;
+  font-size: 0.85rem;
   opacity: 0.7;
 }
 
 .results__list {
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 
 .person-row {
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 14px;
+  gap: 8px;
+  padding: 10px;
+  border-radius: 12px;
   background: rgba(59, 108, 244, 0.08);
 }
 
