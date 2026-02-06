@@ -180,6 +180,17 @@ select {
   color: inherit;
 }
 
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
 .app--dark input,
 .app--dark select {
   background: #111216;
@@ -313,11 +324,14 @@ select {
 
   .button-group {
     width: 100%;
+    gap: 4px;
   }
 
   .button-group .button {
-    flex: 1 1 100%;
-    width: 100%;
+    flex: 1 1 auto;
+    padding: 6px 8px;
+    font-size: 0.8rem;
+    min-width: 0;
   }
 
   .person-row {

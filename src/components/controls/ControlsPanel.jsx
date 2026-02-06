@@ -35,14 +35,11 @@ export default function ControlsPanel({
     <section className="card card--inputs">
       <div className="card__header">
         <h2>Bill details</h2>
-        <button className="button button--ghost" type="button" onClick={onReset}>
-          New calculation
-        </button>
       </div>
 
       <div className="form-grid">
         <label className="field">
-          <span>Total bill amount</span>
+          <span>Amount</span>
           <input
             type="number"
             inputMode="decimal"
