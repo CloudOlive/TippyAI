@@ -9,8 +9,8 @@ import {
 } from "../utils/calc.js";
 
 const DEFAULT_TIP = 18;
-const DEFAULT_PEOPLE = 2;
-const DEFAULT_BILL = "0";
+const DEFAULT_PEOPLE = "";
+const DEFAULT_BILL = "";
 const DEFAULT_TAX = "";
 const DEFAULT_CUSTOM_TIP = "";
 

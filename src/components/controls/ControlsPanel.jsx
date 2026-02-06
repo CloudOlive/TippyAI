@@ -83,15 +83,16 @@ export default function ControlsPanel({
         </div>
 
         <label className="field">
-          <span>Number of people</span>
+          <span>Number of people (max 10)</span>
           <input
             type="number"
-            min="2"
+            min="1"
             max="10"
             value={peopleCount}
             onChange={(event) =>
               onPeopleCountChange(Number(event.target.value))
             }
+            placeholder="e.g. 2"
           />
         </label>
 
